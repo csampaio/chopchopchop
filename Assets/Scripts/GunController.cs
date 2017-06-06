@@ -98,10 +98,16 @@ public class GunController : MonoBehaviour {
     private void ResetBullet(object sender, EventArgs args)
     {
         GameObject bullet = sender as GameObject;
-        bullet.SetActive(false);
-        bullet.transform.position = gunPosition.position;
-        bullet.transform.parent = gunPosition;
-        bullet.transform.rotation = gunPosition.rotation;
+        if (gunPosition != null)
+        {
+            bullet.transform.position = gunPosition.position;
+            bullet.transform.parent = gunPosition;
+            bullet.transform.rotation = gunPosition.rotation;
+            bullet.SetActive(false);
+        } else
+        {
+            Destroy(bullet);
+        }
     }
 
     public void ReloadGun(object sender, EventArgs args)

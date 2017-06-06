@@ -76,7 +76,6 @@ public class GameManager : MonoBehaviour {
     private IEnumerator DestroyPeople(GameObject people)
     {
         yield return new WaitForSeconds(2);
-        people.SetActive(false);
         DestroyImmediate(people);
     }
 }

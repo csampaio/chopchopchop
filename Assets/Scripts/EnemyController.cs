@@ -89,9 +89,10 @@ public class EnemyController : ScrollObjects {
 
     private IEnumerator Kaboon()
     {
+        Debug.Log("Kabooom");
         isMoving = false;
         isAttacking = false;
-        renderer.enabled = false;
+        //renderer.enabled = false;
         collider2d.enabled = false;
         rigidbody2d.bodyType = RigidbodyType2D.Kinematic;
         if (explosionPrefab != null)
